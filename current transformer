@@ -1,0 +1,71 @@
+# Power Transformers FDD and RUL Datasets
+
+## About Dataset
+This repository contains datasets with dissolved gases concentrations in power transformer oil for Remaining Useful Life (RUL) prediction and Fault Detection and Diagnosis (FDD) problems. These datasets can be used for fault detection, diagnosis, and the prediction of transformer RUL.
+
+## Introduction
+Power transformers (PTs) are critical components of nuclear power plants (NPPs). They convert alternating voltage and supply power to both external energy consumers and the NPPs themselves. Many PTs are currently beyond their planned service life, which had been extended from the initial 25 years. Consequently, monitoring the technical condition of PTs has become an urgent necessity.
+
+An effective method for monitoring and diagnosing PTs is Chromatographic Analysis of Dissolved Gas (CADG). CADG is based on the principle of extracting and analyzing dissolved gases from PT oil. Most equipment defects lead to the formation of gases dissolved in oil, and each type of defect generates specific gases in different quantities. By analyzing these concentrations, it is possible to assess the Remaining Useful Life (RUL) of a transformer.
+
+Currently, NPP diagnostic systems for PT equipment rely on predefined control limits for the concentration of dissolved gases in oil. The main drawbacks of this approach are the lack of automatic control and inadequate diagnostic quality, especially for PTs with extended service lives. To address these challenges, machine learning (ML) methods can be employed for automatic fault detection and RUL prediction.
+
+## Data Description
+The dataset consists of `.csv` files containing 420 records of gas concentrations over time. The gases include:
+- **H₂** (Hydrogen)
+- **CO** (Carbon Monoxide)
+- **C₂H₄** (Ethylene)
+- **C₂H₂** (Acetylene)
+
+The time interval between data points is 12 hours. A total of 3000 datasets are available, split into:
+- **Training Set**: 2100 datasets
+- **Test Set**: 900 datasets
+
+For the RUL problem, annotations are available in separate files, with each `.csv` file corresponding to a value indicating the remaining time until the equipment failure.
+
+For the FDD problem, labels (available in separate files) classify data into four operating modes (classes):
+- **Normal Mode**: 2436 datasets
+- **Partial Discharge**: 127 datasets
+- **Low-Energy Discharge**: 162 datasets
+- **Low-Temperature Overheating**: 275 datasets
+
+This dataset is an extension of earlier datasets and includes an additional test set. More information can be found on the original sources [here](URL) and [here](URL).
+
+## FDD Problem Statement
+In the fault detection problem, the task is to classify the data into one of the four labeled classes, which include three anomalous modes and one normal mode. This can be formulated as:
+- **Binary Classification**: Healthy (Normal) vs Anomalous
+- **Multiclass Classification**: One of the four states (Normal, Partial Discharge, Low-Energy Discharge, Low-Temperature Overheating)
+
+## RUL Problem Statement
+For effective maintenance and repair, it is crucial to predict the Remaining Useful Life (RUL) of transformer equipment. The goal is to develop a model that can predict the RUL based on the final 420 time points of gas concentration data.
+
+## Data Usage Examples
+This dataset has been used in the research article by Katser et al., which tackles the problem using an ensemble of classifiers.
+
+## Files
+The following files are available in this repository:
+- `data_train/`: Training dataset files
+- `data_test/`: Test dataset files
+- `labels_fdd_train.csv`: Labels for training set (FDD problem)
+- `labels_fdd_test.csv`: Labels for test set (FDD problem)
+- `labels_rul_train.csv`: Labels for training set (RUL problem)
+- `labels_rul_test.csv`: Labels for test set (RUL problem)
+
+## License
+This dataset is licensed under CC0: Public Domain.
+
+## Expected Update Frequency
+This dataset will not be updated.
+
+## Tags
+- Earth and Nature
+- Tabular
+- Classification
+- Clustering
+- Segmentation
+
+## Acknowledgements
+The data in this repository extends the datasets available [here](URL) and [here](URL).
+
+## Usability Rating
+9.41/10

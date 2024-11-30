@@ -1,4 +1,4 @@
-# Power Transformers FDD and RUL Datasets
+# Current Transformers FDD and RUL Datasets
 
 ## Overview
 This dataset contains time-series data on dissolved gas concentrations in power transformer oil. It is designed to aid in solving two main problems:
